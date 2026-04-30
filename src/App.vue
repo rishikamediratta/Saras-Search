@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import './style.css'
+import SearchBar from './components/SearchBar.vue'
+import ResultList from './components/ResultList.vue'
 
 const query = ref('')
 
@@ -19,47 +21,20 @@ const results = ref([
   }
 ])
 
-// toggle expand per item
-function toggle(result) {
-  result.expanded = !result.expanded
-}
+
 </script>
 
 <template>
   <div class="container">
 
-    <!-- Search Section -->
-    <div class="search section">
+    
       <h1>Saras Search</h1>
-      <input 
-        v-model="query" 
-        type="text" 
-        placeholder="Type your search" 
-      />
-    </div>
+      <SearchBar v-model="query" />
+    
 
-    <!-- Results Section -->
-    <div class="result section">
-
-      <!-- Empty state -->
-      <p v-if="results.length === 0">No results found</p>
-
-      <!-- Results list -->
-      <div 
-        v-for="result in results" 
-        :key="result.id" 
-        class="result-item"
-        @click="toggle(result)"
-      >
-        <strong>{{ result.title }}</strong>
-
-        <p v-if="result.expanded">
-          {{ result.snippet }}
-        </p>
-      </div>
-
-    </div>
-
+    <!-- ResultList component -->
+    <ResultList :results="results" />
+   
   </div>
 </template>
 
