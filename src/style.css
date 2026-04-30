@@ -1,0 +1,32 @@
+/* Container */
+.container {
+  max-width: 600px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+/* Search section */
+.search {
+  margin-bottom: 20px;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Results */
+.result-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.result-item:hover {
+  background: #f5f5f5;
+}
