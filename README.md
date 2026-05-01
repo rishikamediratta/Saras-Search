@@ -84,7 +84,22 @@ src/
 
 ---
 
+## 🚀 Scaling & Performance Improvements
+
+### 🔹 Scaling for Larger Applications
+- Use a global state manager (Pinia) for better state handling
+- Separate API logic into services for maintainability
+- Introduce routing for multi-page architecture
+- Component reusability across different features
+
+
+### ⚡ Performance Optimizations
+- Debouncing input to reduce API calls
+- Lazy loading components
+- Caching API responses
+- Pagination or infinite scrolling for large datasets
 ## 📦 Installation & Setup
+
 
 ```bash
 # Clone the repository
