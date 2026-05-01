@@ -23,7 +23,7 @@ async function fetchResults(q) {
 
     const data = await res.json()
 
-    // 🔥 IGNORE stale response
+   
     if (q !== latestQuery) return
 
     results.value = data.query.search.map((item, index) => {
@@ -61,7 +61,7 @@ watch(query, (newVal) => {
   clearTimeout(timeout)
 
   const trimmed = newVal.trim()
-  latestQuery = trimmed   // 🔥 track latest input
+  latestQuery = trimmed  
 
   if (!trimmed) {
     results.value = []
