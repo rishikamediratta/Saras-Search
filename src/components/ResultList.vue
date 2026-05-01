@@ -2,18 +2,16 @@
 import ResultItem from './ResultItem.vue'
 
 defineProps(['results'])
+const emit = defineEmits(['toggle'])
 </script>
 
 <template>
-  <div class="result section">
-    
-    <p v-if="results.length === 0">No results found</p>
-
+  <div>
     <ResultItem
       v-for="result in results"
       :key="result.id"
       :result="result"
+      @toggle="emit('toggle', $event)"
     />
-    
   </div>
 </template>
